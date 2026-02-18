@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+sqlite
+beautifulsoup4
+requests
+python-dotenv
+apscheduler
+jinja2
