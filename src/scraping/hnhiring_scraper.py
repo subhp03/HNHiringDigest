@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from dataclasses import dataclass, field
-from datetime import datetime
 
 LOCATIONS = [
     "https://hnhiring.com/locations/bangalore",
