@@ -4,11 +4,17 @@ from src.db.base import Base
 
 
 class User(Base):
-    __tablename__ = "users"
+    """Mirror of the neon auth db"""
+    __tablename__ = "user"
+    __table_args__ = {"schema": "neon_auth"}
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(String, primary_key=True)
+    name = Column(String, nullable=True)
     email = Column(String, unique=True, nullable=False, index=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    emailVerified = Column("emailVerified", String, nullable=True)
+    image = Column(String, nullable=True)
+    createdAt = Column("createdAt", DateTime(timezone=True), nullable=True)
+    updatedAt = Column("updatedAt", DateTime(timezone=True), nullable=True)
 
 
 class Job(Base):
